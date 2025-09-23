@@ -1,12 +1,16 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
-{% block header %}
- <h2>{% block title %}Home{% endblock title %}</h2>
-{% endblock header %}
+{% block title %}Home - Message Board{% endblock %}
 
 {% block content %}
- <p>
- Learn more about this project by visiting the <a
-href="{{ url_for('pages.about') }}">About page</a>. 
- </p>
-{% endblock content %}
+<h2>Home</h2>
+<p>Welcome to the Message Board! Learn more on the 
+   <a href="{{ url_for('pages.aboutpage') }}">About page</a>.
+</p>
+{% endblock %}
+
+
+
+
+
+
