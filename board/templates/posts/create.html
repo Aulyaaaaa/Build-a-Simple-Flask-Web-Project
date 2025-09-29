@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1 class="title">Add Post</h1>
+{% endblock header %}
+
+{% block content %}
+  <h2>Add Post</h2>
+  <form method="post">
+    <label for="author">Your Name</label>
+    <input type="text" id="author" name="author">
+
+    <label for="message">Your Message</label>
+    <textarea name="message" name="message"></textarea>
+    
+    <input type="submit" value="Post Message">
+  </form>
+{% endblock content %}

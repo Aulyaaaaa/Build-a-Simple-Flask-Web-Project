@@ -1,13 +1,14 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, redirect, url_for
 
-bp = Blueprint("pages",  __name__)
-
+pages_bp = Blueprint("pages", __name__)
 
 @bp.route("/")
+=======
+@pages_bp.route("/")
 def home():
- return render_template("pages/home.html")
+ return redirect(url_for("posts.create_post"))
 
-@bp.route("/about")
+@pages_bp.route("/about")
 def about():
  return render_template("pages/about.html")
 

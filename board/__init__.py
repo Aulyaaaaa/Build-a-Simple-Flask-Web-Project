@@ -1,10 +1,12 @@
 from flask import Flask
 
-from board.pages import bp
-
 def create_app():
   app = Flask(__name__)
+  
+  from board.posts import posts_bp
+  from board.pages import pages_bp
 
-  # Mendaftarkan Blueprint
-  app.register_blueprint(pages.bp)
-  return app
+  app.register_blueprint(posts_bp)
+  app.register_blueprint(pages_bp)
+ 
+  return app 
