@@ -10,6 +10,6 @@ def home():
 def about():
  return render_template("pages/about.html")
 
-@bp.route("/contact")
+@pages_bp.route("/contact")
 def contact():
     return render_template("pages/contact.html")
