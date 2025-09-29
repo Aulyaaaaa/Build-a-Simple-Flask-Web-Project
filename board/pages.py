@@ -2,8 +2,6 @@ from flask import Blueprint, render_template, redirect, url_for
 
 pages_bp = Blueprint("pages", __name__)
 
-@bp.route("/")
-=======
 @pages_bp.route("/")
 def home():
  return redirect(url_for("posts.create_post"))
