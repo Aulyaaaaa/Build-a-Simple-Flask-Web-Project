@@ -4,7 +4,7 @@ bp = Blueprint("pages", __name__)
 
 @bp.route("/")
 def home():
- return redirect(url_for("posts.create_post"))
+ return redirect(url_for("posts.create"))
 
 @bp.route("/about")
 def about():
