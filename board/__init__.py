@@ -1,16 +1,22 @@
-import click
+import os
+from dotenv import load_dotenv
 from flask import Flask
-from board.pages import bp
+from board import pages, posts, database
+
+load_dotenv()
 
 def create_app():
     app = Flask(__name__)
+    app.config.from_mapping(
+        SECRET_KEY=os.getenv("SECRET_KEY"),
+        DATABASE=os.getenv("DATABASE"),
+        ENVIRONMENT=os.getenv("ENVIRONMENT"),
+    )
 
-    # Mendaftarkan Blueprint
-    app.register_blueprint(bp)
+    app.register_blueprint(pages.bp)
+    app.register_blueprint(posts.bp)
 
-    # Mendaftarkan command init-db
-    @app.cli.command("init-db")
-    def init_db():
-        click.echo("Database berhasil diinisialisasi.")
+    database.init_app(app)
+    app.cli.add_command(database.init_db_command)
 
     return app

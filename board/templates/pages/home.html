@@ -4,13 +4,11 @@
 
 {% block content %}
 <h2>Home</h2>
-<p>Welcome to the Message Board! Learn more on the 
-   <a href="{{ url_for('pages.aboutpage') }}">About page</a>.
+<p>
+    Welcome to the Message Board! Learn more on the
+    <a href="{{ url_for('pages.aboutpage') }}">About page</a>.
+</p>
+<p>
+    Create a new post by clicking <a href="{{ url_for('posts.create') }}">here</a>.
 </p>
 {% endblock %}
-
-
-
-
-
-
